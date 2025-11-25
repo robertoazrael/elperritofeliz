@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import TestimonialsSection from '../components/TestimonialsSection.astro';
+import CallToAction from '../components/CallToAction.astro';
+import Button from '../components/Button.astro';
+---
+<BaseLayout title="El Perrito Feliz | Spa canino" description="Cuidado, amor y estilo para tu mejor amigo.">
+  <Navbar slot="nav" />
+  <Hero />
+
+  <section class="section-shell">
+    <div class="glass-panel grid gap-6 rounded-2xl px-6 py-8 lg:grid-cols-[1.1fr_0.9fr]">
+      <div class="space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-[0.18em] text-caramel">Método</span>
+        <h2 class="text-2xl font-bold text-cocoa dark:text-cream">Bienestar primero</h2>
+        <p class="text-base text-cocoa/80 dark:text-cream/80">
+          Cada sesión empieza con un chequeo rápido de estado de ánimo y piel. Ajustamos aromas, temperatura y música
+          para que tu perrito se relaje antes del baño o corte.
+        </p>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <div class="rounded-2xl bg-cream/70 p-4 text-sm font-semibold text-cocoa shadow-inner dark:bg-cocoa/80 dark:text-cream">
+            Cabinas silenciosas y toallas térmicas
+          </div>
+          <div class="rounded-2xl bg-cream/70 p-4 text-sm font-semibold text-cocoa shadow-inner dark:bg-cocoa/80 dark:text-cream">
+            Reporte rápido con tips de cuidado en casa
+          </div>
+        </div>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="glass-panel flex flex-col gap-2 rounded-2xl p-5">
+          <p class="text-sm font-semibold text-caramel">Preparación</p>
+          <p class="text-sm text-cocoa/80 dark:text-cream/80">Aromaterapia, cepillado suave y limpieza de patitas.</p>
+          <span class="text-lg font-bold text-cocoa dark:text-cream">15 min</span>
+        </div>
+        <div class="glass-panel flex flex-col gap-2 rounded-2xl p-5">
+          <p class="text-sm font-semibold text-caramel">Styling</p>
+          <p class="text-sm text-cocoa/80 dark:text-cream/80">Corte guiado por morfología y personalidad.</p>
+          <span class="text-lg font-bold text-cocoa dark:text-cream">45-75 min</span>
+        </div>
+        <div class="glass-panel flex flex-col gap-2 rounded-2xl p-5">
+          <p class="text-sm font-semibold text-caramel">Final feliz</p>
+          <p class="text-sm text-cocoa/80 dark:text-cream/80">Foto, spray relajante y premios aprobados por vet.</p>
+          <span class="text-lg font-bold text-cocoa dark:text-cream">Incluido</span>
+        </div>
+        <div class="glass-panel flex flex-col gap-2 rounded-2xl p-5">
+          <p class="text-sm font-semibold text-caramel">Seguimiento</p>
+          <p class="text-sm text-cocoa/80 dark:text-cream/80">Recordatorios de mantenimiento y próximas citas.</p>
+          <span class="text-lg font-bold text-cocoa dark:text-cream">Demo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ServicesSection />
+  <TestimonialsSection />
+  <CallToAction />
+  <Footer slot="footer" />
+</BaseLayout>

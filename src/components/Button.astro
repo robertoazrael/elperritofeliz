@@ -1,0 +1,43 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'md' | 'lg';
+  className?: string;
+  ariaLabel?: string;
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  className = '',
+  ariaLabel,
+} = Astro.props;
+
+const sizes: Record<NonNullable<Props['size']>, string> = {
+  md: 'px-5 py-3 text-sm',
+  lg: 'px-6 py-3.5 text-base',
+};
+
+const variants: Record<NonNullable<Props['variant']>, string> = {
+  primary:
+    'bg-caramel text-cocoa dark:bg-tawny dark:text-cream hover:bg-tawny hover:shadow-lg dark:hover:bg-caramel dark:hover:text-cocoa',
+  secondary:
+    'bg-cream/80 text-cocoa border border-caramel/50 dark:bg-cocoa/70 dark:text-cream dark:border-cocoa/60 hover:bg-cream hover:border-caramel dark:hover:bg-cocoa',
+  ghost:
+    'bg-transparent text-cocoa dark:text-cream hover:bg-caramel/15 dark:hover:bg-cocoa/70 border border-transparent hover:border-caramel/60 dark:hover:border-caramel/60',
+};
+
+const baseClasses = 'inline-flex items-center justify-center gap-2 rounded-pill font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-caramel';
+const resolvedClasses = `${baseClasses} ${sizes[size]} ${variants[variant]} ${className}`.trim();
+---
+{href ? (
+  <a class={resolvedClasses} href={href} aria-label={ariaLabel}>
+    <slot />
+  </a>
+) : (
+  <button class={resolvedClasses} type="button" aria-label={ariaLabel}>
+    <slot />
+  </button>
+)}

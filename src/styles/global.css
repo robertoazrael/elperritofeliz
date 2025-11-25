@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-sand: #f3e8d2;
+  --color-caramel: #d49b72;
+  --color-cocoa: #2d1b0d;
+  --color-tawny: #a66c42;
+  --color-cream: #fff8ef;
+  --color-forest: #23403a;
+  --color-blush: #f7b89c;
+  --color-sky: #fce2c4;
+  --shadow-card: 0 10px 35px -15px rgba(0, 0, 0, 0.25);
+  --radius-pill: 999px;
+}
+
+@layer base {
+  :root {
+    font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    color-scheme: light;
+    background-color: #fffaf3;
+  }
+
+  .dark {
+    color-scheme: dark;
+    background-color: #0d0a09;
+  }
+
+  body {
+    @apply text-cocoa dark:text-cream antialiased;
+    background: radial-gradient(circle at 20% 20%, #fce2c4 0, rgba(252, 226, 196, 0) 30%),
+      radial-gradient(circle at 80% 0%, #f7b89c 0, rgba(247, 184, 156, 0) 26%),
+      linear-gradient(180deg, #fffaf3 0%, #f6e8d5 50%, #fffaf3 100%);
+  }
+
+  .dark body {
+    background: radial-gradient(circle at 20% 20%, #3c2416 0, rgba(60, 36, 22, 0) 35%),
+      radial-gradient(circle at 80% 10%, #2f1b0d 0, rgba(47, 27, 13, 0) 28%),
+      linear-gradient(180deg, #0f0b0a 0%, #1a130f 50%, #0d0a09 100%);
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  ::selection {
+    background: #d49b72;
+    color: #0d0a09;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/70 dark:bg-cocoa/70 backdrop-blur-md border border-caramel/30 dark:border-cocoa/40 shadow-card;
+  }
+
+  .section-shell {
+    @apply mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8;
+  }
+}

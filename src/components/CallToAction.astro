@@ -1,0 +1,18 @@
+---
+import Button from './Button.astro';
+---
+<section class="section-shell" id="cta">
+  <div class="glass-panel flex flex-col gap-4 rounded-3xl px-6 py-8 md:flex-row md:items-center md:justify-between md:px-10 md:py-10">
+    <div class="space-y-3">
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-caramel">Agenda</span>
+      <h3 class="text-2xl font-bold text-cocoa dark:text-cream">¿Listo para consentirlo?</h3>
+      <p class="max-w-xl text-base text-cocoa/80 dark:text-cream/80">
+        Envíanos un mensaje y armamos la rutina perfecta: spa relajante, corte estilizado y tips de cuidado en casa.
+      </p>
+    </div>
+    <div class="flex flex-col gap-3 sm:flex-row">
+      <Button href="/contacto" variant="primary" size="lg" className="w-full sm:w-auto">Reservar visita</Button>
+      <Button href="/servicios" variant="secondary" size="lg" className="w-full sm:w-auto">Ver detalles</Button>
+    </div>
+  </div>
+</section>

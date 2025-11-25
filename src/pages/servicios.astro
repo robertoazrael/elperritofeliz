@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import CallToAction from '../components/CallToAction.astro';
+import { services } from '@lib/content';
+---
+<BaseLayout title="Servicios | El Perrito Feliz" description="Estética canina, baño premium y corte estilizado." >
+  <Navbar slot="nav" />
+
+  <section class="section-shell pt-12">
+    <div class="space-y-3">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-caramel">Agenda</p>
+      <h1 class="text-3xl font-bold text-cocoa dark:text-cream">Servicios pensados en su bienestar</h1>
+      <p class="max-w-3xl text-base text-cocoa/80 dark:text-cream/80">
+        Protocolos cálidos, herramientas silenciosas y grooming centrado en la comodidad de tu mejor amigo.
+      </p>
+    </div>
+    <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {services.map((service) => (
+        <div class="glass-panel flex flex-col gap-3 rounded-2xl p-6">
+          <h2 class="text-xl font-semibold text-cocoa dark:text-cream">{service.title}</h2>
+          <p class="text-sm text-cocoa/80 dark:text-cream/80">{service.description}</p>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-caramel">{service.duration}</p>
+          <div class="mt-auto flex items-center justify-between text-sm text-cocoa/80 dark:text-cream/80">
+            <span>Incluye cuidado de patitas</span>
+            <span aria-hidden="true">→</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-shell">
+    <div class="glass-panel grid gap-6 rounded-2xl px-6 py-8 md:grid-cols-2">
+      <div class="space-y-2">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-caramel">Extras</p>
+        <h2 class="text-2xl font-bold text-cocoa dark:text-cream">Complementos para mimarlo</h2>
+        <p class="text-base text-cocoa/80 dark:text-cream/80">Agrega detalles para que la experiencia sea única.</p>
+      </div>
+      <div class="grid gap-3 sm:grid-cols-2">
+        <div class="rounded-2xl bg-cream/70 p-4 text-sm font-semibold text-cocoa shadow-inner dark:bg-cocoa/80 dark:text-cream">
+          Lavanda relajante
+          <span class="block text-xs font-medium text-cocoa/70 dark:text-cream/70">Gratis en baño premium</span>
+        </div>
+        <div class="rounded-2xl bg-cream/70 p-4 text-sm font-semibold text-cocoa shadow-inner dark:bg-cocoa/80 dark:text-cream">
+          Corte higiénico
+          <span class="block text-xs font-medium text-cocoa/70 dark:text-cream/70">Seguridad y rapidez</span>
+        </div>
+        <div class="rounded-2xl bg-cream/70 p-4 text-sm font-semibold text-cocoa shadow-inner dark:bg-cocoa/80 dark:text-cream">
+          Limpieza dental suave
+          <span class="block text-xs font-medium text-cocoa/70 dark:text-cream/70">Cepillos de silicona</span>
+        </div>
+        <div class="rounded-2xl bg-cream/70 p-4 text-sm font-semibold text-cocoa shadow-inner dark:bg-cocoa/80 dark:text-cream">
+          Reporte personalizado
+          <span class="block text-xs font-medium text-cocoa/70 dark:text-cream/70">Tips y próximos pasos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CallToAction />
+  <Footer slot="footer" />
+</BaseLayout>

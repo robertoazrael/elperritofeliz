@@ -1,0 +1,85 @@
+---
+import Button from './Button.astro';
+---
+<section class="section-shell pt-10 lg:pt-14">
+  <div class="grid items-center gap-12 lg:grid-cols-2">
+    <div class="space-y-6">
+      <span class="inline-flex items-center gap-2 rounded-pill bg-caramel/20 px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-caramel dark:bg-cocoa/70">
+        Bienvenido al spa canino
+      </span>
+      <div class="space-y-4">
+        <h1 class="text-4xl font-bold leading-tight text-cocoa sm:text-5xl dark:text-cream">
+          El Perrito Feliz
+        </h1>
+        <p class="max-w-xl text-lg text-cocoa/80 dark:text-cream/80">
+          Cuidado, amor y estilo para tu mejor amigo. Experiencias relajantes, cortes con carácter y un equipo que
+          trata a cada perrito como en casa.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        <Button href="/#cta" variant="primary" size="lg">
+          Quiero saber más
+        </Button>
+        <Button href="/servicios" variant="secondary" size="lg">
+          Ver servicios
+        </Button>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-3">
+        <div class="rounded-xl border border-caramel/30 bg-cream/60 p-4 text-sm font-semibold text-cocoa shadow-sm dark:border-cocoa/40 dark:bg-cocoa/70 dark:text-cream">
+          200+ perritos felices
+        </div>
+        <div class="rounded-xl border border-caramel/30 bg-cream/60 p-4 text-sm font-semibold text-cocoa shadow-sm dark:border-cocoa/40 dark:bg-cocoa/70 dark:text-cream">
+          Groomers certificados
+        </div>
+        <div class="rounded-xl border border-caramel/30 bg-cream/60 p-4 text-sm font-semibold text-cocoa shadow-sm dark:border-cocoa/40 dark:bg-cocoa/70 dark:text-cream">
+          Ambiente sin estrés
+        </div>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="absolute -left-10 -top-10 h-24 w-24 rounded-full bg-caramel/20 blur-3xl dark:bg-caramel/25"></div>
+      <div class="absolute -right-8 -bottom-14 h-32 w-32 rounded-full bg-blush/30 blur-3xl dark:bg-cocoa/50"></div>
+      <div class="relative overflow-hidden rounded-[28px] border border-caramel/30 bg-white/70 shadow-2xl backdrop-blur-xl dark:border-cocoa/60 dark:bg-cocoa/60">
+        <div class="absolute inset-0 bg-gradient-to-br from-cream/80 via-caramel/10 to-blush/30 opacity-80 dark:from-cocoa/70 dark:via-tawny/30 dark:to-caramel/40"></div>
+        <div class="relative flex flex-col gap-6 px-8 py-10">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm font-semibold text-caramel">Sesión tranquila</p>
+              <p class="text-xl font-bold text-cocoa dark:text-cream">Lado spa</p>
+            </div>
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/70 text-2xl shadow-card dark:bg-cocoa/80">
+              🐾
+            </div>
+          </div>
+          <div class="grid gap-3">
+            <div class="glass-panel flex items-center gap-3 rounded-2xl px-4 py-3">
+              <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-caramel/30 text-xl">🧼</div>
+              <div>
+                <p class="text-sm font-semibold text-cocoa dark:text-cream">Baño tibio</p>
+                <p class="text-xs text-cocoa/70 dark:text-cream/70">Agua purificada y aromas suaves</p>
+              </div>
+            </div>
+            <div class="glass-panel flex items-center gap-3 rounded-2xl px-4 py-3">
+              <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-caramel/30 text-xl">✂️</div>
+              <div>
+                <p class="text-sm font-semibold text-cocoa dark:text-cream">Corte seguro</p>
+                <p class="text-xs text-cocoa/70 dark:text-cream/70">Diseños personalizados y sin ruidos fuertes</p>
+              </div>
+            </div>
+            <div class="glass-panel flex items-center gap-3 rounded-2xl px-4 py-3">
+              <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-caramel/30 text-xl">🧴</div>
+              <div>
+                <p class="text-sm font-semibold text-cocoa dark:text-cream">Rutina saludable</p>
+                <p class="text-xs text-cocoa/70 dark:text-cream/70">Productos hipoalergénicos y cuidados calmantes</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between rounded-2xl bg-white/60 px-4 py-3 text-sm font-semibold text-cocoa shadow-inner dark:bg-cocoa/80 dark:text-cream">
+            <span>Agenda abierta esta semana</span>
+            <span class="flex items-center gap-1 text-caramel">3 cupos <span aria-hidden="true">→</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

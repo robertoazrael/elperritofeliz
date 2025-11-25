@@ -1,0 +1,26 @@
+---
+import ServiceCard from './ServiceCard.astro';
+import { services } from '@lib/content';
+---
+<section class="section-shell" id="servicios">
+  <div class="flex flex-col gap-4">
+    <span class="text-xs font-semibold uppercase tracking-[0.18em] text-caramel">Servicios</span>
+    <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+      <div class="space-y-2">
+        <h2 class="text-3xl font-bold text-cocoa dark:text-cream">Todo para un perrito feliz</h2>
+        <p class="max-w-2xl text-base text-cocoa/80 dark:text-cream/80">
+          Protocolos sin estrés, aromas cálidos y manos expertas para que cada visita sea un premio.
+        </p>
+      </div>
+      <div class="flex gap-2 text-sm text-cocoa/70 dark:text-cream/70">
+        <span class="rounded-pill bg-caramel/15 px-3 py-2 font-semibold text-caramel">Productos veganos</span>
+        <span class="rounded-pill bg-caramel/15 px-3 py-2 font-semibold text-caramel">Cabinas climatizadas</span>
+      </div>
+    </div>
+  </div>
+  <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {services.map((service) => (
+      <ServiceCard {...service} />
+    ))}
+  </div>
+</section>

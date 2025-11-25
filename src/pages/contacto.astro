@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+---
+<BaseLayout title="Contacto | El Perrito Feliz" description="Agenda una visita o pide más información.">
+  <Navbar slot="nav" />
+
+  <section class="section-shell pt-12">
+    <div class="mb-8 space-y-3">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-caramel">Contacto</p>
+      <h1 class="text-3xl font-bold text-cocoa dark:text-cream">Conversemos sobre tu perrito</h1>
+      <p class="max-w-3xl text-base text-cocoa/80 dark:text-cream/80">
+        Envíanos tus datos y cuéntanos qué necesita tu perrito. Responderemos con una propuesta de horario y cuidados.
+      </p>
+    </div>
+
+    <div class="glass-panel grid gap-8 rounded-2xl px-6 py-8 md:grid-cols-2">
+      <div class="space-y-3">
+        <h2 class="text-2xl font-semibold text-cocoa dark:text-cream">Detalles rápidos</h2>
+        <ul class="space-y-2 text-sm text-cocoa/80 dark:text-cream/80">
+          <li>✔️ Cabinas sin jaulas, atención uno a uno.</li>
+          <li>✔️ Productos hipoalergénicos y libres de parabenos.</li>
+          <li>✔️ Notificaciones cuando tu perrito esté listo.</li>
+        </ul>
+        <div class="rounded-2xl bg-cream/70 p-4 text-sm font-semibold text-cocoa shadow-inner dark:bg-cocoa/80 dark:text-cream">
+          Horarios demo: Lun - Sáb / 9:00 - 19:00
+        </div>
+      </div>
+
+      <form class="space-y-4" aria-label="Formulario de contacto">
+        <div class="space-y-2">
+          <label class="text-sm font-semibold text-cocoa dark:text-cream" for="name">Nombre</label>
+          <input
+            id="name"
+            name="name"
+            required
+            class="w-full rounded-2xl border border-caramel/40 bg-white/80 px-4 py-3 text-cocoa shadow-inner outline-none transition focus:border-caramel focus:ring-2 focus:ring-caramel/50 dark:border-cocoa/60 dark:bg-cocoa/70 dark:text-cream"
+            placeholder="Tu nombre"
+            type="text"
+          />
+        </div>
+        <div class="space-y-2">
+          <label class="text-sm font-semibold text-cocoa dark:text-cream" for="phone">Teléfono</label>
+          <input
+            id="phone"
+            name="phone"
+            required
+            class="w-full rounded-2xl border border-caramel/40 bg-white/80 px-4 py-3 text-cocoa shadow-inner outline-none transition focus:border-caramel focus:ring-2 focus:ring-caramel/50 dark:border-cocoa/60 dark:bg-cocoa/70 dark:text-cream"
+            placeholder="Ej. +34 600 000 000"
+            type="tel"
+          />
+        </div>
+        <div class="space-y-2">
+          <label class="text-sm font-semibold text-cocoa dark:text-cream" for="message">Mensaje</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            class="w-full rounded-2xl border border-caramel/40 bg-white/80 px-4 py-3 text-cocoa shadow-inner outline-none transition focus:border-caramel focus:ring-2 focus:ring-caramel/50 dark:border-cocoa/60 dark:bg-cocoa/70 dark:text-cream"
+            placeholder="Cuéntanos la edad y necesidades de tu perrito"
+          ></textarea>
+        </div>
+        <div class="flex items-center justify-between text-sm text-cocoa/70 dark:text-cream/70">
+          <span>Demo: sin envío real, solo visual.</span>
+          <Button variant="primary" size="md" className="" ariaLabel="Enviar formulario">
+            Enviar
+          </Button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

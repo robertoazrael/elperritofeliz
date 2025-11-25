@@ -1,0 +1,18 @@
+---
+import TestimonialBlock from './TestimonialBlock.astro';
+import { testimonials } from '@lib/content';
+---
+<section class="section-shell" id="testimonios">
+  <div class="flex flex-col gap-3">
+    <span class="text-xs font-semibold uppercase tracking-[0.18em] text-caramel">Testimonios</span>
+    <h2 class="text-3xl font-bold text-cocoa dark:text-cream">Humanos tranquilos, perritos felices</h2>
+    <p class="max-w-2xl text-base text-cocoa/80 dark:text-cream/80">
+      Historias reales de perritos que llegan nerviosos y se van moviendo la cola.
+    </p>
+  </div>
+  <div class="mt-8 grid gap-5 md:grid-cols-3">
+    {testimonials.map((testimonial) => (
+      <TestimonialBlock {...testimonial} />
+    ))}
+  </div>
+</section>

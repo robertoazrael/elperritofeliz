@@ -1,0 +1,125 @@
+---
+import Button from './Button.astro';
+import { navLinks } from '@lib/content';
+
+const currentPath = Astro.url.pathname;
+---
+<header class="sticky top-0 z-30">
+  <div class="section-shell pt-6 pb-4">
+    <div class="glass-panel flex items-center gap-6 rounded-2xl px-4 py-4 shadow-card">
+      <a class="flex items-center gap-3" href="/">
+        <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-caramel text-cocoa shadow-card dark:bg-tawny dark:text-cream">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor">
+            <path d="M9.5 3.5C7.6 3.5 6 5.2 6 7.4c0 2.2 1.6 4.1 3.5 4.1S13 9.6 13 7.4C13 5.2 11.4 3.5 9.5 3.5Zm5 0C12.6 3.5 11 5.2 11 7.4c0 2.2 1.6 4.1 3.5 4.1s3.5-1.9 3.5-4.1c0-2.2-1.6-3.9-3.5-3.9Zm-10 8.3c-1.7 0-3.5 1.6-3.5 3.8C1 17.9 2.2 20 4 20c1.3 0 2.6-.9 3.2-2.2.3-.7-.3-1.5-1.1-1.4-.6.1-1.1.6-1.1 1.2 0 .3-.3.5-.6.5-.4 0-.9-.6-.9-2.5 0-1 .8-1.9 1.6-1.9.6 0 1.2.4 1.5 1 .4.7 1.5.6 1.7-.2.3-1.2-1-2.5-2.6-2.5Zm15 0c-1.6 0-2.9 1.3-2.6 2.5.2.8 1.3.9 1.7.2.3-.6.9-1 1.5-1 .8 0 1.6.9 1.6 1.9 0 1.9-.5 2.5-.9 2.5-.3 0-.6-.2-.6-.5 0-.6-.5-1.1-1.1-1.2-.8-.1-1.4.7-1.1 1.4.6 1.3 1.9 2.2 3.2 2.2 1.8 0 3-2.1 3-4.4 0-2.2-1.8-3.8-3.5-3.8Zm-5 1.7c-2 0-3.5 2-3.5 4.3 0 2.8 2 5.2 4.5 5.2S20 20.6 20 17.8c0-2.3-1.5-4.3-3.5-4.3Zm-5 0C7.5 13.5 6 15.5 6 17.8c0 2.8 2 5.2 4.5 5.2S15 20.6 15 17.8c0-2.3-1.5-4.3-3.5-4.3Z" />
+          </svg>
+        </span>
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-caramel dark:text-caramel">El Perrito Feliz</p>
+          <p class="text-lg font-semibold text-cocoa dark:text-cream">Spa & Estilo Canino</p>
+        </div>
+      </a>
+
+      <nav class="ml-auto hidden items-center gap-6 lg:flex">
+        {navLinks.map(({ label, href }) => (
+          <a
+            class={`text-sm font-medium transition-colors hover:text-caramel ${
+              currentPath === href ? 'text-caramel dark:text-caramel' : 'text-cocoa/80 dark:text-cream/80'
+            }`}
+            href={href}
+          >
+            {label}
+          </a>
+        ))}
+        <div class="flex items-center gap-3">
+          <button
+            class="flex h-11 w-11 items-center justify-center rounded-xl border border-caramel/50 bg-white/60 text-cocoa transition hover:bg-cream dark:border-cocoa/60 dark:bg-cocoa/70 dark:text-cream"
+            type="button"
+            data-theme-toggle
+            aria-label="Cambiar tema"
+          >
+            <span class="theme-icon" aria-hidden="true"></span>
+          </button>
+          <Button href="/#cta" variant="primary" size="md">
+            Quiero saber más
+          </Button>
+        </div>
+      </nav>
+
+      <div class="ml-auto flex items-center gap-3 lg:hidden">
+        <button
+          class="flex h-11 w-11 items-center justify-center rounded-xl border border-caramel/50 bg-white/70 text-cocoa transition hover:bg-cream dark:border-cocoa/60 dark:bg-cocoa/70 dark:text-cream"
+          type="button"
+          data-theme-toggle
+          aria-label="Cambiar tema"
+        >
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+        <button
+          class="flex h-11 w-11 items-center justify-center rounded-xl border border-caramel/50 bg-white/70 text-cocoa transition hover:bg-cream dark:border-cocoa/60 dark:bg-cocoa/70 dark:text-cream"
+          type="button"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Abrir menú"
+        >
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-nav" class="section-shell pt-0 lg:hidden" hidden>
+    <div class="glass-panel mt-2 flex flex-col gap-4 rounded-2xl px-4 py-4">
+      <nav class="flex flex-col gap-2">
+        {navLinks.map(({ label, href }) => (
+          <a
+            class={`rounded-xl px-3 py-2 text-sm font-semibold transition-colors hover:bg-caramel/15 ${
+              currentPath === href ? 'text-caramel dark:text-caramel' : 'text-cocoa dark:text-cream'
+            }`}
+            href={href}
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
+      <Button href="/#cta" variant="primary" size="md" className="w-full text-center">
+        Quiero saber más
+      </Button>
+    </div>
+  </div>
+  <script is:inline>
+    const navToggle = document.querySelector('[data-nav-toggle]');
+    const mobileNav = document.getElementById('mobile-nav');
+    const storageKey = 'elp-theme';
+    const themeButtons = Array.from(document.querySelectorAll('[data-theme-toggle]'));
+    const themeIcon = () => (document.documentElement.classList.contains('dark') ? '☾' : '☀');
+
+    const setTheme = (mode) => {
+      document.documentElement.classList.toggle('dark', mode === 'dark');
+      localStorage.setItem(storageKey, mode);
+      themeButtons.forEach((btn) => {
+        const iconSlot = btn.querySelector('.theme-icon');
+        if (iconSlot) iconSlot.textContent = themeIcon();
+      });
+    };
+
+    const current = localStorage.getItem(storageKey);
+    if (current) setTheme(current);
+    else setTheme(document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+
+    themeButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const nextTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+        setTheme(nextTheme);
+      });
+    });
+
+    navToggle?.addEventListener('click', () => {
+      if (!mobileNav) return;
+      const isHidden = mobileNav.hasAttribute('hidden');
+      mobileNav.toggleAttribute('hidden');
+      navToggle.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+    });
+  </script>
+</header>
