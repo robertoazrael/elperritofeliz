@@ -2,15 +2,15 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-sand: #f3e8d2;
-  --color-caramel: #d49b72;
-  --color-cocoa: #2d1b0d;
-  --color-tawny: #a66c42;
-  --color-cream: #fff8ef;
-  --color-forest: #23403a;
-  --color-blush: #f7b89c;
-  --color-sky: #fce2c4;
-  --shadow-card: 0 10px 35px -15px rgba(0, 0, 0, 0.25);
+  --color-sand: #f6f9ff;
+  --color-caramel: #ff4fa3;
+  --color-cocoa: #0f172a;
+  --color-tawny: #ffb300;
+  --color-cream: #fffdf9;
+  --color-forest: #24d6c8;
+  --color-blush: #ffd8ec;
+  --color-sky: #c8f1ff;
+  --shadow-card: 0 12px 40px -18px rgba(15, 23, 42, 0.25);
   --radius-pill: 999px;
 }
 
@@ -18,25 +18,25 @@
   :root {
     font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
     color-scheme: light;
-    background-color: #fffaf3;
+    background-color: #fffdf9;
   }
 
   .dark {
     color-scheme: dark;
-    background-color: #0d0a09;
+    background-color: #0b1021;
   }
 
   body {
     @apply text-cocoa dark:text-cream antialiased;
-    background: radial-gradient(circle at 20% 20%, #fce2c4 0, rgba(252, 226, 196, 0) 30%),
-      radial-gradient(circle at 80% 0%, #f7b89c 0, rgba(247, 184, 156, 0) 26%),
-      linear-gradient(180deg, #fffaf3 0%, #f6e8d5 50%, #fffaf3 100%);
+    background: radial-gradient(circle at 18% 18%, #ffe8f5 0, rgba(255, 232, 245, 0) 32%),
+      radial-gradient(circle at 82% 8%, #d4f4ff 0, rgba(212, 244, 255, 0) 26%),
+      linear-gradient(180deg, #fffdf9 0%, #f3fbff 46%, #fff7ec 100%);
   }
 
   .dark body {
-    background: radial-gradient(circle at 20% 20%, #3c2416 0, rgba(60, 36, 22, 0) 35%),
-      radial-gradient(circle at 80% 10%, #2f1b0d 0, rgba(47, 27, 13, 0) 28%),
-      linear-gradient(180deg, #0f0b0a 0%, #1a130f 50%, #0d0a09 100%);
+    background: radial-gradient(circle at 18% 18%, rgba(255, 79, 163, 0.14) 0, rgba(255, 79, 163, 0) 32%),
+      radial-gradient(circle at 80% 12%, rgba(36, 214, 200, 0.12) 0, rgba(36, 214, 200, 0) 28%),
+      linear-gradient(180deg, #0b1021 0%, #0f172a 42%, #0b1021 100%);
   }
 
   a {
@@ -44,14 +44,14 @@
   }
 
   ::selection {
-    background: #d49b72;
-    color: #0d0a09;
+    background: #ff85c2;
+    color: #0b1021;
   }
 }
 
 @layer components {
   .glass-panel {
-    @apply bg-white/70 dark:bg-cocoa/70 backdrop-blur-md border border-caramel/30 dark:border-cocoa/40 shadow-card;
+    @apply bg-white/80 dark:bg-cocoa/70 backdrop-blur-lg border border-caramel/20 dark:border-forest/30 shadow-card;
   }
 
   .section-shell {
